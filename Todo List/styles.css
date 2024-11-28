@@ -1,0 +1,261 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h2 {
+font-family: Times New Roman;
+}
+
+/* Header */
+header {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* Board Layout */
+.board {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+/* Columns */
+.column {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+}
+
+.column h2 {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 10px -10px;
+}
+
+.task-list {
+    min-height: 200px;
+    margin-bottom: 10px;
+}
+
+.add-task-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-task-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Tasks */
+.task {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: grab;
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    inset: 0; /* Equivalent to top: 0; right: 0; bottom: 0; left: 0 */
+    background-color: rgba(0, 0, 0, 0.5); /* Dim background */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 1000; /* Ensure it appears on top */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    max-width: 400px; /* Optional width limit */
+    width: 90%; /* Responsive width */
+    text-align: center;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.close-btn {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Completed Task Styling */
+.task.completed {
+    text-decoration: line-through;
+    color: gray;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}
+
+.task-item {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    position: relative;
+}
+
+.task-item.completed h4,
+.task-item.completed p {
+    text-decoration: line-through; /* Cross out text */
+    color: gray; /* Dimmed text color for completed tasks */
+}
+
+.task-item button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.task-item button:hover {
+    background: #0056b3;
+}
+
+.task-item.completed button {
+    background: #ffc107; /* Yellow button for unmarking */
+    color: black;
+}
+
+.task.completed .task-title {
+    text-decoration: line-through;
+    color: grey;
+}
+
+/* Centering the placeholders inside the inputs */
+input[type="text"],
+textarea {
+    display: block;
+    width: 90%; /* Full width with some padding */
+    margin: 10px auto; /* Center the fields horizontally */
+    padding: 10px; /* Add padding for better spacing */
+    font-size: 16px; /* Larger font size for readability */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Prevent padding from affecting width */
+    text-align: center; /* Align text in the center */
+}
+
+/* Center alignment for placeholder text */
+input::placeholder,
+textarea::placeholder {
+    text-align: center; /* Placeholder text centered */
+    color: #888; /* Light grey placeholder */
+    font-style: italic; /* Italicized placeholder for emphasis */
+}
+
+/* Centering the textarea as well */
+textarea {
+    resize: none; /* Disable resizing */
+    height: 100px; /* Fixed height for the description box */
+}
+
+#complete-task-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#complete-task-btn:hover {
+    background-color: #218838;
+}
+
+/* General modal styling */
+.modal {
+    display: none; /* Hide the modal by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Modal content (the actual box) */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+}
+
+/* Close button inside the modal */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Input fields inside the modal */
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}

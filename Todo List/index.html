@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Todo List</h1>
+    </header>
+    <main>
+        <div class="board">
+            <!-- To Do Column -->
+            <div class="column" id="todo-column">
+                <h2>To Do</h2>
+                <div class="task-list" id="todo-tasks"></div>
+                <button class="add-task-btn" data-column="todo">+ Add Task</button>
+            </div>
+
+            <!-- In Progress Column -->
+            <div class="column" id="inprogress-column">
+                <h2>In Progress</h2>
+                <div class="task-list" id="inprogress-tasks"></div>
+                <button class="add-task-btn" data-column="inprogress">+ Add Task</button>
+            </div>
+
+            <!-- Completed Column -->
+            <div class="column" id="completed-column">
+                <h2>Completed</h2>
+                <div class="task-list" id="completed-tasks"></div>
+                <button class="add-task-btn" data-column="completed">+ Add Task</button>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal" id="task-modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3>Add New Task</h3>
+        <input type="text" id="task-title" placeholder="Task Title" required>
+        <textarea id="task-desc" placeholder="Task Description"></textarea>
+        <button id="save-task-btn">Save Task</button>
+    </div>
+</div>
+
+<!-- Modal for Marking Tasks as In Progress -->
+<div class="modal" id="inprogress-modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3>Mark Task as In Progress</h3>
+        <p>Are you sure you want to move this task to In Progress?</p>
+        <button id="inprogress-task-btn">Yes, In Progress</button>
+    </div>
+</div>
+
+<!-- Modal for Marking Tasks as Completed -->
+<div class="modal" id="completed-modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3>Mark Task as Completed</h3>
+        <p>Are you sure you want to mark this task as Completed?</p>
+        <button id="complete-task-btn">Yes, Complete</button>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
